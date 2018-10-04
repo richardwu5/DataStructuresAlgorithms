@@ -7,7 +7,6 @@ public class MySLinkedList {
         first = null;
         last = null;
         num = 0;
-        System.out.println("Linked List Instantiated");
     }
 
     private class node {
@@ -58,6 +57,9 @@ public class MySLinkedList {
             if (current.d == x) {
                 if (current == first) {
                     first = current.next;
+                } else if (current == last) {
+                    previous.next = null;
+                    last = previous;
                 } else {
                     previous.next = current.next;
                 }

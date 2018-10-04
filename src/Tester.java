@@ -83,9 +83,18 @@ public class Tester {
         System.out.println("Singly Linked List Test PASSED");
     }
 
+    private void DoublyLinkedListTest() {
+        MyDLinkedList l = new MyDLinkedList();
+        System.out.println("Doubly Linked List Test");
+
+        System.out.println("Doubly Linked List Test PASSED");
+
+    }
+
     private void testBench() {
         ArrayListTest();
         SinglyLinkedListTest();
+        DoublyLinkedListTest();
     }
 
     public static void main(String[] args) {
