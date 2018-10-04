@@ -87,6 +87,36 @@ public class Tester {
         MyDLinkedList l = new MyDLinkedList();
         System.out.println("Doubly Linked List Test");
 
+        l.add(1);
+        l.add(2);
+        l.add(3);
+        u.myassert(l.size()==3);
+        u.myassert(l.get(0)==1);
+        u.myassert(l.get(1)==2);
+        u.myassert(l.get(2)==3);
+
+        l.add(1, 4);
+        l.add(4, 5);
+        l.add(0, 6);
+        u.myassert(l.get(0)==6);
+        u.myassert(l.get(1)==1);
+        u.myassert(l.get(2)==4);
+        u.myassert(l.get(3)==2);
+        u.myassert(l.get(4)==3);
+        u.myassert(l.get(5)==5);
+
+        u.myassert(l.contains(1)==true);
+        u.myassert(l.contains(2)==true);
+        u.myassert(l.contains(3)==true);
+        u.myassert(l.contains(4)==true);
+        u.myassert(l.contains(5)==true);
+        u.myassert(l.contains(6)==true);
+        u.myassert(l.contains(7)==false);
+
+        l.remove(5);
+        l.remove(6);
+        u.myassert(l.size()==4);
+
         System.out.println("Doubly Linked List Test PASSED");
 
     }
