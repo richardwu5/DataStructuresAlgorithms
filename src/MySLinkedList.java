@@ -53,7 +53,7 @@ public class MySLinkedList {
     public boolean remove(int x) {
         node current = first;
         node previous = null;
-        for (int i=0; i<num; i++) {
+        while (current != null) {
             if (current.d == x) {
                 if (current == first) {
                     first = current.next;
@@ -76,7 +76,7 @@ public class MySLinkedList {
 
     public boolean contains(int x) {
         node n = first;
-        for (int i=0; i<num; i++) {
+        while (n != null) {
             if (n.d == x) {
                 return true;
             }
@@ -102,4 +102,18 @@ public class MySLinkedList {
         return num;
     }
 
+    public void reverse() {
+        node prev = null;
+        node curr = first;
+        node next = null;
+        last = first;
+        while (curr != null) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        first = prev;
+        return;
+    }
 }

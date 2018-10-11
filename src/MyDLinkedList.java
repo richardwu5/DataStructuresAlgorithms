@@ -62,7 +62,7 @@ public class MyDLinkedList {
 
     public boolean remove(int x) {
         node n = sentinel.next;
-        for (int i=0; i<num; i++) {
+        while (n != sentinel) {
             if (n.d == x) {
                 if (n == sentinel.next) {
                     sentinel.next = n.next;
@@ -84,7 +84,7 @@ public class MyDLinkedList {
 
     public boolean contains(int x) {
         node n = sentinel.next;
-        for (int i=0; i<num; i++) {
+        while (n != sentinel) {
             if (n.d == x) {
                 return true;
             }

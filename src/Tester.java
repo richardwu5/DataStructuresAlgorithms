@@ -68,6 +68,14 @@ public class Tester {
         u.myassert(l.get(4)==3);
         u.myassert(l.get(5)==5);
 
+        l.reverse();
+        u.myassert(l.get(0)==5);
+        u.myassert(l.get(1)==3);
+        u.myassert(l.get(2)==2);
+        u.myassert(l.get(3)==4);
+        u.myassert(l.get(4)==1);
+        u.myassert(l.get(5)==6);
+
         u.myassert(l.contains(1)==true);
         u.myassert(l.contains(2)==true);
         u.myassert(l.contains(3)==true);
@@ -121,10 +129,33 @@ public class Tester {
 
     }
 
+    private void StackTest() {
+        MyStack s = new MyStack();
+        System.out.println("Stack Test");
+
+        for (int i=0; i<8; i++) {
+            s.push(i);
+        }
+        u.myassert(s.peek()==7);
+        u.myassert(s.size()==8);
+        u.myassert(s.pop()==7);
+        u.myassert(s.pop()==6);
+        u.myassert(s.pop()==5);
+        u.myassert(s.peek()==4);
+        u.myassert(s.size()==5);
+        s.push(-80);
+        s.push(-90);
+        u.myassert(s.pop()==-90);
+        u.myassert(s.peek()==-80);
+
+        System.out.println("Stack Test PASSED");
+    }
+
     private void testBench() {
         ArrayListTest();
         SinglyLinkedListTest();
         DoublyLinkedListTest();
+        StackTest();
     }
 
     public static void main(String[] args) {
@@ -133,4 +164,5 @@ public class Tester {
         t.testBench() ;
         System.out.println("Tester ENDS");
     }
+
 }
