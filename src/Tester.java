@@ -151,11 +151,33 @@ public class Tester {
         System.out.println("Stack Test PASSED");
     }
 
+    private void QueueTest() {
+        MyQueue q = new MyQueue();
+        System.out.println("Queue Test");
+
+        for (int i=0; i<5; i++) {
+            q.enQueue(i);
+        }
+        u.myassert(q.peek()==0);
+        q.deQueue();
+        q.deQueue();
+        u.myassert(q.peek()==2);
+        q.enQueue(10);
+        q.enQueue(11);
+        q.deQueue();
+        q.deQueue();
+        u.myassert(q.deQueue()==4);
+        u.myassert(q.deQueue()==10);
+
+        System.out.println("Queue Test PASSED");
+    }
+
     private void testBench() {
         ArrayListTest();
         SinglyLinkedListTest();
         DoublyLinkedListTest();
         StackTest();
+        QueueTest();
     }
 
     public static void main(String[] args) {
