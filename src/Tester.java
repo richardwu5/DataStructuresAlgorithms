@@ -172,12 +172,69 @@ public class Tester {
         System.out.println("Queue Test PASSED");
     }
 
+    private void SelectionSortTest() {
+        System.out.println("Selection Sort Test");
+
+        Sort s = new Sort();
+        int[] a = {15, 5, 64, 8, 12, 11, 4, 35};
+        s.selectionSort(a);
+        u.myassert(a[0]==4);
+        u.myassert(a[1]==5);
+        u.myassert(a[2]==8);
+        u.myassert(a[3]==11);
+        u.myassert(a[4]==12);
+        u.myassert(a[5]==15);
+        u.myassert(a[6]==35);
+        u.myassert(a[7]==64);
+
+        int[] b = {6, 5, 4, 3, 2, 1};
+        s.selectionSort(b);
+        u.myassert(b[0]==1);
+        u.myassert(b[1]==2);
+        u.myassert(b[2]==3);
+        u.myassert(b[3]==4);
+        u.myassert(b[4]==5);
+        u.myassert(b[5]==6);
+
+        int[] c = {1, 2, 3, 4, 5, 6};
+        s.selectionSort(c);
+        u.myassert(c[0]==1);
+        u.myassert(c[1]==2);
+        u.myassert(c[2]==3);
+        u.myassert(c[3]==4);
+        u.myassert(c[4]==5);
+        u.myassert(c[5]==6);
+
+        int[] d = {1, 1, 1, 1, 1, 1};
+        s.selectionSort(d);
+        u.myassert(d[0]==1);
+        u.myassert(d[1]==1);
+        u.myassert(d[2]==1);
+        u.myassert(d[3]==1);
+        u.myassert(d[4]==1);
+        u.myassert(d[5]==1);
+
+        System.out.println("Selection Sort Test PASSED");
+    }
+
+    private void InsertionSortTest() {
+        System.out.println("Insertion Sort Test");
+
+        Sort s = new Sort();
+        
+
+        System.out.println("Insertion Sort Test PASSED");
+    }
+
     private void testBench() {
         ArrayListTest();
         SinglyLinkedListTest();
         DoublyLinkedListTest();
         StackTest();
         QueueTest();
+
+        SelectionSortTest();
+        InsertionSortTest();
     }
 
     public static void main(String[] args) {
